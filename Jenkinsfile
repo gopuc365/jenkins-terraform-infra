@@ -3,24 +3,23 @@ pipeline {
 
     stages {
 //         stage('Checkout') {
-//             steps {{withAWS(credentials: 'jenkinsdemo')
+//             steps {
 //             checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mydevopscoach/my-tf-iac-aws-repo']]])            
 
 //           }
 //         }
-    }
+        
         stage ("terraform init") {
-            steps {withAWS(credentials: 'jenkinsdemo')
+            steps {
                 sh ('terraform init') 
             }
         }
-    }
+        
         stage ("terraform Action") {
-            steps {{withAWS(credentials: 'jenkinsdemo')
+            steps {
                 echo "Terraform action is --> ${action}"
                 sh ('terraform ${action} --auto-approve') 
            }
         }
     }
-}
 }
