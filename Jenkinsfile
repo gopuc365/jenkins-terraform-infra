@@ -3,9 +3,8 @@ pipeline {
 tools {
 "org.jenkinsci.plugins.terraform.TerraformInstallation" "Terraform"
 }
-parameters {
-  string(name: 'WORKSPACE', defaultValue: 'development')
-}
+
+
 environment {
 TF_HOME = tool('Terraform')
 TP_LOG = "WARN"
