@@ -4,7 +4,7 @@ tools {
 "org.jenkinsci.plugins.terraform.TerraformInstallation" "Terraform"
 }
 parameters {
-  string(name: 'WORKSPACE', defaultValue: 'development', description: 'setting up workspace for terraform' )
+  string(name: 'WORKSPACE', defaultValue: 'development')
 }
 environment {
 TF_HOME = tool('Terraform')
